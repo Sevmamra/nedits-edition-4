@@ -1,0 +1,66 @@
+/* Base reset & responsive font scaling */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { font-size: clamp(14px, 1.5vw, 16px); scroll-behavior: smooth; }
+body { background: #f4f4f4; color:#333; font-family:'Poppins',sans-serif; transition: background 0.3s, color 0.3s; }
+body.dark-mode { background:#121212; color:#eee; }
+body.dark-mode .section, body.dark-mode .about-box, body.dark-mode .testimonial, body.dark-mode .contact-form { background:#1e1e1e; color:#fff; }
+
+/* Header */
+header { background: linear-gradient(45deg,#ff6a00,#ee0979); color:#fff; padding:0 10px; text-align:center; }
+.header-container { display:flex; justify-content:center; align-items:flex-start; gap:5px; padding:2px 0; position:relative; }
+.logo, .header-title-img { loading:lazy; }
+.tagline { font-size: clamp(15px,1.8vw,20px); font-weight:500; }
+/* Nav */
+.navbar { background:#111; position:sticky; top:0; z-index:999; }
+.nav-links { display:flex; justify-content:center; gap:30px; padding:15px 0; list-style:none; }
+.nav-links a, #toggle-theme { color:#eee; font-size:15px; font-weight:600; background:none; border:none; cursor:pointer; transition:0.3s; }
+.nav-links a.active, .nav-links a:hover { color:#ffd700; }
+#toggle-theme:hover { color:#ffd700; }
+
+/* Hero */
+.hero { position:relative; height:550px; background-size:cover; background-repeat:no-repeat; background-position:center; text-align:center; }
+.hero-overlay { position:relative; top:50%; transform:translateY(-50%); }
+.hero-title-img { height:360px; margin:auto; display:block; }
+.explore-btn { margin-top:50px; padding:10px 24px; font-size:22px; border-radius:50px; background:red; color:#fff; box-shadow:0 4px 12px rgba(255,0,0,0.4); transition:all 0.3s; }
+.explore-btn:hover { transform:scale(1.05); box-shadow:0 6px 24px rgba(255,0,0,0.4); }
+/* Sections */
+.section { max-width:1100px; margin: auto; padding:70px 20px; }
+.section h2 { font-family:'Days One',sans-serif; font-size:32px; position:relative; opacity:0; transform:translateX(-20px); transition:all 0.6s ease; }
+.section h2::before { content:''; width:6px; height:40px; background:#7b0091; margin-right:15px; position:absolute; left:-30px; top:0; transform:scaleX(0); transform-origin:left; transition:transform 0.8s ease-out; }
+.section h2.aos-animate { opacity:1; transform:translateX(0); }
+.section h2.aos-animate::before { transform:scaleX(1); }
+
+/* Service cards glassmorphism + carousel styling */
+.services-container { position: relative; overflow:hidden; height:400px; }
+.service-card {
+  position:absolute; left:50%; top:50%; width:320px; min-height:280px;
+  padding:30px 20px; background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); border-radius:14px; border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 20px rgba(0,0,0,0.1); text-align:center; cursor:pointer;
+  transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  opacity:0.6; transform:translate(-50%,-50%) scale(0.7);
+}
+.service-card.left { transform:translate(-150%,-50%) scale(0.7) rotateY(30deg); opacity:0.5; z-index:1; }
+.service-card.center { transform:translate(-50%,-50%) scale(1.1); opacity:1; z-index:10; }
+.service-card.right { transform:translate(50%,-50%) scale(0.7) rotateY(-30deg); opacity:0.5; z-index:1; }
+.service-card.active { box-shadow:0 0 25px 5px #7b0091; transform:translate(-50%,-50%) scale(1.15) translateY(-5px); }
+/* Content inside cards */
+.card-content h4 { font-family:'Neuton',serif; font-size:24px; margin-bottom:15px; color:#fff; background:#333; padding:5px 10px; }
+.card-content p { font-family:'ABeeZee',sans-serif; font-size:16px; line-height:1.6; }
+
+/* About box, testimonials, form & footer simplified for brevity, but glass/dark-mode compatible */
+.about-box, .testimonial, .contact-form {
+  background:#fff; border-radius:14px; box-shadow:0 0 20px rgba(0,0,0,0.1); margin-top:20px; padding:30px; transition:background 0.3s,color 0.3s;
+}
+body.dark-mode .about-box, body.dark-mode .testimonial, body.dark-mode .contact-form {
+  background:#1e1e1e; color:#fff; box-shadow:none;
+}
+.testimonial { position:relative; margin-bottom:20px; padding:25px; opacity:0; }
+.testimonial-bar { background:#7b0091; width:4px; height:80%; position:absolute; top:10px; left:0; border-radius:2px; }
+.testimonial p { font-size:16px; font-style:italic; margin-bottom:10px; }
+.testimonial span { color:#7b0091; font-size:15px; font-weight:600; }
+
+/* Form focus state */
+form input:focus, form textarea:focus { outline:none; border-color:#7b0091; box-shadow:0 0 6px #7b0091; }
+
+/* Footer links hover */
+footer a:hover { color:#ee0979; }
