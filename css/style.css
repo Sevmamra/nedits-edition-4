@@ -706,10 +706,11 @@ blockquote {
   background: #7b0091;
   color: white;
   padding: 100px 0;
+  padding-left: 20px;
+  padding-right: 20px;
   position: relative;
   overflow: hidden;
 }
-
 .contact-section::before {
   content: "";
   position: absolute;
