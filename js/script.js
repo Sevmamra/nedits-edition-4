@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Testimonials Carousel Functionality
+// Updated Testimonials Carousel with Enhanced Auto-Slide
 function initTestimonialsCarousel() {
   const carousel = document.querySelector('.testimonials-carousel');
   const cards = document.querySelectorAll('.testimonial-card');
@@ -285,6 +285,8 @@ function initTestimonialsCarousel() {
   });
   
   const dots = document.querySelectorAll('.carousel-dot');
+  let autoScrollInterval;
+  let isHovering = false;
   
   // Update active dot
   function updateDots(activeIndex) {
@@ -303,74 +305,68 @@ function initTestimonialsCarousel() {
     updateDots(index);
   }
   
+  // Get current visible card index
+  function getCurrentCardIndex() {
+    const cardWidth = cards[0].offsetWidth + 30;
+    return Math.round(carousel.scrollLeft / cardWidth);
+  }
+  
+  // Auto-scroll function
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (isHovering) return;
+      
+      const currentIndex = getCurrentCardIndex();
+      const nextIndex = (currentIndex + 1) % cards.length;
+      scrollToCard(nextIndex);
+    }, 5000); // Change slide every 5 seconds
+  }
+  
   // Previous button
   prevBtn.addEventListener('click', () => {
-    const currentScroll = carousel.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 30; // including gap
-    
-    let prevIndex = Math.floor((currentScroll - cardWidth) / cardWidth);
-    if (prevIndex < 0) prevIndex = cards.length - 1;
-    
+    const currentIndex = getCurrentCardIndex();
+    const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
     scrollToCard(prevIndex);
+    resetAutoScroll();
   });
   
   // Next button
   nextBtn.addEventListener('click', () => {
-    const currentScroll = carousel.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 30; // including gap
-    
-    let nextIndex = Math.floor((currentScroll + cardWidth) / cardWidth) + 1;
-    if (nextIndex >= cards.length) nextIndex = 0;
-    
+    const currentIndex = getCurrentCardIndex();
+    const nextIndex = (currentIndex + 1) % cards.length;
     scrollToCard(nextIndex);
+    resetAutoScroll();
   });
   
-  // Auto-scroll every 5 seconds
-  let autoScroll = setInterval(() => {
-    const currentScroll = carousel.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 30;
-    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-    
-    if (currentScroll >= maxScroll - 10) {
-      scrollToCard(0);
-    } else {
-      carousel.scrollBy({
-        left: cardWidth,
-        behavior: 'smooth'
-      });
-      
-      // Update dots after scroll
-      setTimeout(() => {
-        const activeIndex = Math.round(carousel.scrollLeft / cardWidth);
-        updateDots(activeIndex);
-      }, 500);
-    }
-  }, 5000);
+  // Reset auto-scroll timer
+  function resetAutoScroll() {
+    clearInterval(autoScrollInterval);
+    startAutoScroll();
+  }
   
-  // Pause auto-scroll on hover
-  carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  // Pause on hover
+  carousel.addEventListener('mouseenter', () => {
+    isHovering = true;
+    clearInterval(autoScrollInterval);
+  });
+  
   carousel.addEventListener('mouseleave', () => {
-    autoScroll = setInterval(() => {
-      const currentScroll = carousel.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 30;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      
-      if (currentScroll >= maxScroll - 10) {
-        scrollToCard(0);
-      } else {
-        carousel.scrollBy({
-          left: cardWidth,
-          behavior: 'smooth'
-        });
-        
-        setTimeout(() => {
-          const activeIndex = Math.round(carousel.scrollLeft / cardWidth);
-          updateDots(activeIndex);
-        }, 500);
-      }
-    }, 5000);
+    isHovering = false;
+    resetAutoScroll();
+  });
+  
+  // Initialize
+  startAutoScroll();
+  
+  // Update dots on scroll
+  carousel.addEventListener('scroll', () => {
+    const currentIndex = getCurrentCardIndex();
+    updateDots(currentIndex);
   });
 }
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initTestimonialsCarousel);
 
 // Contact Form Submission
 function handleContactForm() {
