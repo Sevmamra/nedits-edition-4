@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ----------------------------
-// 8. TESTIMONIALS CAROUSEL
+// 8. TESTIMONIALS CAROUSEL WITH AUTO-SLIDE
 // ----------------------------
 function initTestimonialsCarousel() {
   const carousel = document.querySelector('.testimonials-carousel');
@@ -275,38 +275,47 @@ function initTestimonialsCarousel() {
   const prevBtn = document.querySelector('.carousel-prev');
   const nextBtn = document.querySelector('.carousel-next');
   const dotsContainer = document.querySelector('.carousel-dots');
-  
+
   if (!carousel || cards.length === 0 || !prevBtn || !nextBtn || !dotsContainer) return;
 
-  // Get visible cards count based on screen size
+  let autoScrollInterval;
+  let isHovering = false;
+
+  // Get visible cards count based on screen width
   function getVisibleCardsCount() {
     if (window.innerWidth >= 1024) return 3;
     if (window.innerWidth >= 768) return 2;
     return 1;
   }
 
-  // Scroll to specific card group
+  // Scroll to specific group
   function scrollToCard(index) {
     const cardWidth = cards[0].offsetWidth + 30;
-    carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+    carousel.scrollTo({
+      left: cardWidth * index,
+      behavior: 'smooth'
+    });
+    updateActiveDot(index);
   }
 
-  // Update active dot
-  function updateActiveDot(index) {
-    document.querySelectorAll('.carousel-dot').forEach(dot => dot.classList.remove('active'));
-    if (document.querySelectorAll('.carousel-dot')[index]) {
-      document.querySelectorAll('.carousel-dot')[index].classList.add('active');
-    }
-  }
-
-  // Get current visible group index
+  // Get current group index
   function getCurrentGroupIndex() {
     const cardWidth = cards[0].offsetWidth + 30;
     const visibleCards = getVisibleCardsCount();
     return Math.round(carousel.scrollLeft / (cardWidth * visibleCards));
   }
 
-  // Clear and regenerate dots
+  // Update active dot
+  function updateActiveDot(index) {
+    document.querySelectorAll('.carousel-dot').forEach(dot => dot.classList.remove('active'));
+    const dots = document.querySelectorAll('.carousel-dot');
+    const groupIndex = Math.floor(index / getVisibleCardsCount());
+    if (dots[groupIndex]) {
+      dots[groupIndex].classList.add('active');
+    }
+  }
+
+  // Generate dots dynamically
   function generateDots() {
     dotsContainer.innerHTML = '';
     const visibleCards = getVisibleCardsCount();
@@ -321,11 +330,32 @@ function initTestimonialsCarousel() {
     }
   }
 
+  // Auto-scroll function
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (isHovering) return;
+
+      const visibleCards = getVisibleCardsCount();
+      const currentIndex = getCurrentGroupIndex();
+      const totalGroups = Math.ceil(cards.length / visibleCards);
+      const nextIndex = (currentIndex + 1) % totalGroups;
+
+      scrollToCard(nextIndex * visibleCards);
+    }, 5000);
+  }
+
+  // Reset auto-scroll
+  function resetAutoScroll() {
+    clearInterval(autoScrollInterval);
+    startAutoScroll();
+  }
+
   // Event Listeners
   prevBtn.addEventListener('click', () => {
     const visibleCards = getVisibleCardsCount();
     const index = getCurrentGroupIndex();
     scrollToCard(Math.max(0, index - 1) * visibleCards);
+    resetAutoScroll();
   });
 
   nextBtn.addEventListener('click', () => {
@@ -333,21 +363,33 @@ function initTestimonialsCarousel() {
     const index = getCurrentGroupIndex();
     const maxIndex = Math.ceil(cards.length / visibleCards) - 1;
     scrollToCard(Math.min(maxIndex, index + 1) * visibleCards);
+    resetAutoScroll();
   });
 
-  // Sync active dot on scroll
+  carousel.addEventListener('mouseenter', () => {
+    isHovering = true;
+    clearInterval(autoScrollInterval);
+  });
+
+  carousel.addEventListener('mouseleave', () => {
+    isHovering = false;
+    resetAutoScroll();
+  });
+
   carousel.addEventListener('scroll', () => {
-    updateActiveDot(getCurrentGroupIndex());
+    updateActiveDot(getCurrentGroupIndex() * getVisibleCardsCount());
   });
 
-  // On window resize, regenerate dots
-  window.addEventListener('resize', generateDots);
+  window.addEventListener('resize', () => {
+    generateDots();
+    resetAutoScroll();
+  });
 
-  generateDots(); // Initial dots
+  generateDots();
+  startAutoScroll();
 }
 
 document.addEventListener('DOMContentLoaded', initTestimonialsCarousel);
-
 
 // ----------------------------
 // 9. CONTACT US SECTION
