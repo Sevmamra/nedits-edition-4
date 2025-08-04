@@ -643,18 +643,48 @@ blockquote {
 }
 
 .testimonial-card:nth-child(4) {
-  background: linear-gradient(135deg, #f8f5ff 0%, #ffffff 100%);
-  border: 1px solid #7b0091;
+  background: linear-gradient(135deg, #fffdf5 0%, #ffffff 100%);
+  border: 1px solid #f39c12;
 }
 
 .testimonial-card:nth-child(5) {
-  background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
-  border: 1px solid #ff6a00;
+  background: linear-gradient(135deg, #f5faff 0%, #ffffff 100%);
+  border: 1px solid #3498db;
 }
 
 .testimonial-card:nth-child(6) {
-  background: linear-gradient(135deg, #f5fff7 0%, #ffffff 100%);
-  border: 1px solid #00b894;
+  background: linear-gradient(135deg, #fef5f9 0%, #ffffff 100%);
+  border: 1px solid #e91e63;
+}
+
+.testimonial-card:nth-child(7) {
+  background: linear-gradient(135deg, #f5fff8 0%, #ffffff 100%);
+  border: 1px solid #2ecc71;
+}
+
+.testimonial-card:nth-child(8) {
+  background: linear-gradient(135deg, #fdf5ff 0%, #ffffff 100%);
+  border: 1px solid #9b59b6;
+}
+
+.testimonial-card:nth-child(9) {
+  background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+  border: 1px solid #2980b9;
+}
+
+.testimonial-card:nth-child(10) {
+  background: linear-gradient(135deg, #fffaf5 0%, #ffffff 100%);
+  border: 1px solid #d35400;
+}
+
+.testimonial-card:nth-child(11) {
+  background: linear-gradient(135deg, #f9fff5 0%, #ffffff 100%);
+  border: 1px solid #27ae60;
+}
+
+.testimonial-card:nth-child(12) {
+  background: linear-gradient(135deg, #f5f5ff 0%, #ffffff 100%);
+  border: 1px solid #8e44ad;
 }
 
 /* Responsive adjustments */
