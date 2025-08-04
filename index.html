@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nedits Edition</title>
-  <meta name="description" content="Nedits Edition offers digital design, development, marketing, and creative services for brands and influencers." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Alegreya+Sans+SC:wght@400;700&family=Days+One&family=Neuton:wght@400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nedits Edition - Your Creative Digital Partner offering design, development and marketing services">
+  <meta name="keywords" content="digital agency, web design, graphic design, video editing, web development">
+  
+  <title>Nedits Edition - Creative Digital Solutions</title>
+
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Google Fonts (optimized single request) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Alegreya+Sans+SC:wght@400;700&family=Days+One&family=Neuton&family=ABeeZee&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+  <!-- Header Section -->
   <header data-aos="fade-down">
     <div class="header-container">
-      <img src="images/logo.png" alt="NEDITS Logo" class="logo" loading="lazy"/>
-      <img src="images/header-title.png" alt="NEDITS Edition" class="header-title-img" loading="lazy"/>
+      <img src="images/logo.png" alt="NEDITS Logo" class="logo" loading="lazy">
+      <img src="images/header-title.png" alt="NEDITS Edition" class="header-title-img" loading="lazy">
     </div>
     <p class="tagline">Your Creative Digital Partner</p>
   </header>
 
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
     <ul class="nav-links container">
-      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#home" aria-current="page">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><button id="toggle-theme" aria-label="Toggle Dark Mode">🌓</button></li>
     </ul>
   </nav>
 
-  <section class="hero" id="home">
+  <!-- Hero Section -->
+  <section class="hero" id="home" aria-labelledby="hero-heading">
     <div class="container">
       <div class="hero-overlay" data-aos="zoom-in-down">
-        <img src="images/hero-title.png" alt="Welcome to NEDITS Edition" class="hero-title-img" loading="lazy"/>
+        <img src="images/hero-title.png" alt="Welcome to NEDITS Edition" class="hero-title-img" loading="lazy">
         <a href="#services" class="btn explore-btn">Explore Services</a>
       </div>
     </div>
   </section>
 
-  <section class="section" id="services">
+  <!-- Services Section -->
+  <section class="section" id="services" aria-labelledby="services-heading">
     <div class="container">
-      <h2 data-aos="fade-up">Our Services</h2>
-  <div class="services-category">
-    <div class="category-header">
-      <img src="images/icon-creative.png" alt="Creative & Visual Services"/>
-      <h3>Creative & Visual Services</h3>
-    </div>
-    <div class="services-container">
-    <div class="services-carousel" data-carousel="creative">
+      <h2 id="services-heading" data-aos="fade-up">Our Services</h2>
+
+      <!-- Creative Services -->
+      <div class="services-category">
+        <div class="category-header">
+          <img src="images/icon-creative.png" alt="" aria-hidden="true">
+          <h3>Creative & Visual Services</h3>
+        </div>
+        <div class="services-container">
+          <div class="services-carousel" data-carousel="creative">
       <div class="service-card">
         <div class="card-content">
           <h4>Graphic Designing</h4>
@@ -102,13 +121,15 @@
   </div>
 </div>
 
-  <div class="services-category">
-    <div class="category-header">
-      <img src="images/icon-media.png" alt="Media & Content Services"/>
-      <h3>Media & Content Services</h3>
-    </div>
-    <div class="services-container">
-    <div class="services-carousel" data-carousel="media">
+
+      <!-- Media Services -->
+      <div class="services-category">
+        <div class="category-header">
+          <img src="images/icon-media.png" alt="" aria-hidden="true">
+          <h3>Media & Content Services</h3>
+        </div>
+        <div class="services-container">
+          <div class="services-carousel" data-carousel="media">
       <div class="service-card">
         <div class="card-content">
           <h4>Video Editing</h4>
@@ -142,14 +163,15 @@
     </div>
   </div>
 </div>
-  
-  <div class="services-category">
-    <div class="category-header">
-      <img src="images/icon-tech.png" alt="Tech & Development Services"/>
-      <h3>Tech & Development Services</h3>
-    </div>
-    <div class="services-container">
-    <div class="services-carousel" data-carousel="tech">
+
+      <!-- Tech Services -->
+      <div class="services-category">
+        <div class="category-header">
+          <img src="images/icon-tech.png" alt="" aria-hidden="true">
+          <h3>Tech & Development Services</h3>
+        </div>
+        <div class="services-container">
+          <div class="services-carousel" data-carousel="tech">
       <div class="service-card">
         <div class="card-content">
           <h4>Website Development</h4>
@@ -196,13 +218,14 @@
   </div>
 </div>
 
-  <div class="services-category">
-    <div class="category-header">
-      <img src="images/icon-marketing.png" alt="Marketing & Growth Services"/>
-      <h3>Marketing & Growth Services</h3>
-    </div>
-    <div class="services-container">
-    <div class="services-carousel" data-carousel="marketing">
+      <!-- Marketing Services -->
+      <div class="services-category">
+        <div class="category-header">
+          <img src="images/icon-marketing.png" alt="" aria-hidden="true">
+          <h3>Marketing & Growth Services</h3>
+        </div>
+        <div class="services-container">
+          <div class="services-carousel" data-carousel="marketing">
       <div class="service-card">
         <div class="card-content">
           <h4>Digital Marketing</h4>
@@ -248,14 +271,16 @@
     </div>
   </div>
 </div>
-  
-  <div class="services-category">
-    <div class="category-header">
-      <img src="images/icon-content.png" alt="Content & Brand Setup"/>
-      <h3>Content & Brand Setup</h3>
-    </div>
-    <div class="services-container">
-    <div class="services-carousel" data-carousel="branding">
+
+      
+      <!-- Branding Services -->
+      <div class="services-category">
+        <div class="category-header">
+          <img src="images/icon-content.png" alt="" aria-hidden="true">
+          <h3>Content & Brand Setup</h3>
+        </div>
+        <div class="services-container">
+          <div class="services-carousel" data-carousel="branding">
       <div class="service-card">
         <div class="card-content">
           <h4>Brand Identity Creation</h4>
@@ -285,54 +310,356 @@
   </div>
 </div>
 </section>
-  
 
-  <section class="section" id="about">
-    <div class="container">
-      <h2 data-aos="fade-up">About Us</h2>
-      <div class="about-box" data-aos="fade-right">
-        <p id="about-text">Nedits Edition is a creative brand based in India, helping content creators, influencers, startups and businesses enhance their digital presence. We specialize in high-quality visuals, engaging content and brand-focused strategies that make a difference.</p>
+  <!-- About Section -->
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="container about-wrapper">
+      <h2 id="about-heading" class="section-title">About Us<span></span></h2>
+      <div class="about-animated-text">
+        
+      <div class="about-part" data-anim="fade-down">
+        <p><strong>Nedits Edition</strong> isn’t just a service provider; it's a full-fledged digital creative studio built for the modern era.</p>
+      </div>
+      <div class="about-part" data-anim="fade-up">
+        <p>We help <strong>brands, creators, and businesses</strong> build their digital presence from scratch — from designing visuals and editing videos, to developing websites and automating workflows.</p>
+      </div>
+      <div class="about-part" data-anim="fade-left">
+        <blockquote>
+          <strong>Our goal is simple:</strong><br/>
+          Deliver creative, technical & marketing solutions that actually work and help you grow.
+        </blockquote>
+      </div>
+      <div class="about-part" data-anim="fade-right">
+        <p>Quality over quantity. Every project receives personal attention, fresh ideas, and strategic thinking.</p>
+      </div>
+
+      <div class="feature-card" data-anim="zoom-in">
+        <h3>🎨 All‑in‑One Studio</h3>
+        <p>Creative, tech, marketing—all delivered under one roof.</p>
+      </div>
+      <div class="feature-card" data-anim="zoom-in" style="animation-delay: 0.4s;">
+        <h3>🚀 Future‑Ready Skills</h3>
+        <p>AI, Web3, automation tools, and more—powered by innovation.</p>
+      </div>
+
+      <div class="about-part" data-anim="fade-up" style="animation-delay: 0.8s;">
+        <p><strong>Vision:</strong> To empower creators and businesses through simple, creative & accessible digital growth.</p>
+      </div>
+      <div class="about-part" data-anim="fade-up" style="animation-delay: 1s;">
+        <p><strong>Mission:</strong> Deliver quality digital services with transparency, creativity & strategy—helping clients grow smarter.</p>
+      </div>
+
+      <div class="about-cta" data-anim="fade-up" style="animation-delay: 1.2s;">
+        <p>Let’s <strong>create something amazing together!</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+  <!-- Skills Section -->
+  <section class="section skills-orbit" aria-labelledby="skills-heading">
+    <h2 id="skills-heading" class="section-title">Skills</h2>
+    <div class="orbit-container">
+      <div class="center-sun">We</div>
+      <div class="orbit orbit-1">
+        <div class="orbit-label">EDIT</div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-label">DESIGN</div>
+      </div>
+      <div class="orbit orbit-3">
+        <div class="orbit-label">DEVELOP</div>
+      </div>
+      <div class="orbit orbit-4">
+        <div class="orbit-label">MANAGE</div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="testimonials">
-    <div class="container">
-      <h2 data-aos="fade-up">What Our Clients Say</h2>
-      <div class="testimonial" data-aos="zoom-in"><div class="testimonial-bar"></div><p>"Nedits Edition transformed my brand's Instagram game with stunning designs and timely deliveries!"</p><span>- Priya S.</span></div>
-      <div class="testimonial" data-aos="zoom-in" data-aos-delay="100"><div class="testimonial-bar"></div><p>"Excellent website development service. Clean, responsive, and exactly as promised."</p><span>- Akash R.</span></div>
-      <div class="testimonial" data-aos="zoom-in" data-aos-delay="200"><div class="testimonial-bar"></div><p>"Super professional video editing for my YouTube channel. Gained huge audience engagement!"</p><span>- Manav T.</span></div>
+  <!-- Journey Section -->
+  <section class="section" id="journey" aria-labelledby="journey-heading">
+    <h2 id="journey-heading" class="section-title">Our Journey</h2>
+    <div class="timeline">
+      <div class="vertical-line"></div>
+      
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>2020 – Launch</h4>
+        <p>Started with graphics & video services.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>2022 – Expansion</h4>
+        <p>Added websites, apps & brand services.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h4>2025 – Global Reach</h4>
+        <p>Serving clients globally with premium services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- Achievements Section -->
+  <section class="section" id="achievements" aria-labelledby="achievements-heading">
+    <h2 id="achievements-heading" class="section-title">Our Achievements</h2>
+    <div class="counters-container">
+      <div class="counter"><h3 id="clientsCounter">0</h3><p>Happy Clients</p></div>
+      <div class="counter"><h3 id="projectsCounter">0</h3><p>Projects Completed</p></div>
+      <div class="counter"><h3 id="experienceCounter">0</h3><p>Years of Experience</p></div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <div class="container">
-      <h2 data-aos="fade-up">Contact Us</h2>
-      <div class="contact-form" data-aos="fade-up">
-        <form>
-          <input type="text" placeholder="Your Name" required/>
-          <input type="email" placeholder="Your Email" required/>
-          <textarea rows="5" placeholder="Your Message"></textarea>
-          <button type="submit" class="btn contact-btn">Send Message</button>
+<!-- ==================== -->
+<!-- TESTIMONIALS SECTION -->
+<!-- ==================== -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Client Success Stories</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Don't just take our word for it</p>
+    
+    <div class="testimonials-wrapper">
+      <div class="testimonials-carousel">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-aos="zoom-in">
+          <div class="client-img">
+            <img src="images/client1.jpg" alt="Rahul Sharma" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">"Nedits transformed our brand identity completely. Their designs helped us increase our social media engagement by 300% in just 2 months!"</p>
+            <div class="client-info">
+              <h4 class="client-name">Rahul Sharma</h4>
+              <p class="client-role">CEO, TechStart Solutions</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="client-img">
+            <img src="images/client2.jpg" alt="Priya Patel" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">"The website Nedits built for our e-commerce store increased our conversion rate by 45%. Their attention to detail is remarkable."</p>
+            <div class="client-info">
+              <h4 class="client-name">Priya Patel</h4>
+              <p class="client-role">Founder, StyleHub</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="client-img">
+            <img src="images/client3.jpg" alt="Arjun Mehta" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <div class="rating">
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <p class="testimonial-text">"Their video editing services took our YouTube channel from 10k to 100k subscribers in 6 months. The thumbnails and editing style are perfect!"</p>
+            <div class="client-info">
+              <h4 class="client-name">Arjun Mehta</h4>
+              <p class="client-role">Content Creator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-controls">
+        <button class="carousel-prev" aria-label="Previous testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-next" aria-label="Next testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== -->
+<!-- CONTACT US SECTION -->
+<!-- ==================== -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <h2 class="section-title">Let's Create Something Amazing</h2>
+        <p class="contact-subtitle">Get in touch with our team to discuss your project</p>
+        
+        <div class="contact-methods">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Email Us</h4>
+              <a href="mailto:contact@nedits.com">contact@nedits.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Call Us</h4>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Visit Us</h4>
+              <p>123 Creative Street, Digital Nagar, Mumbai 400001</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper" data-aos="fade-left">
+        <form class="contact-form" id="neditsContactForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" required>
+            <label for="name">Your Name</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email Address</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone">
+            <label for="phone">Phone Number (Optional)</label>
+          </div>
+          
+          <div class="form-group">
+            <select id="service" name="service" required>
+              <option value="" disabled selected></option>
+              <option value="design">Graphic Design</option>
+              <option value="web">Web Development</option>
+              <option value="video">Video Editing</option>
+              <option value="marketing">Digital Marketing</option>
+              <option value="other">Other Services</option>
+            </select>
+            <label for="service">Service Interested In</label>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
         </form>
       </div>
     </div>
-  </section>
-
-  <footer data-aos="fade-up">
+  </div>
+</section>
+  
+  <!-- Footer -->
+  <footer data-aos="fade-up" aria-label="Footer">
     <div class="container footer-flex">
       <div class="footer-links">
         <a href="#about">About</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="#" aria-label="Privacy policy">Privacy Policy</a>
+        <a href="#" aria-label="Terms of service">Terms of Service</a>
       </div>
-      <div class="social-icons"><a href="#" target="_blank">Instagram</a> | <a href="#" target="_blank">Facebook</a> | <a href="#" target="_blank">YouTube</a></div>
+      <div class="social-icons">
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a> |
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a> |
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+      </div>
     </div>
-    <p>&copy; 2025 NEDITS Edition. All rights reserved.</p>
+    <p>&copy; <span id="currentYear"></span> NEDITS Edition. All rights reserved.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="js/script.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
